@@ -1,0 +1,67 @@
+.trendingCoin{
+    // background-color:white;
+    // background-image: url('../images/backgroundimage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vw;
+    margin: 1em;
+    border-radius: 25px;
+
+}
+.coinDetails{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    padding: 1em;
+     background-color: black;
+    .coins{
+        text-align: center;
+        padding: 1em;
+        margin: 0.5em;
+        border-radius: 25px;
+        color:white;
+        img{
+          height: 100px;
+        }
+        p{
+          font-size: 1.7rem;
+        }
+      
+    }
+}
+.trendingCoinHeader{
+    padding: 1em;
+    h2{
+        text-align: center;
+        color:rgb(188, 13, 71);
+        color: white;
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+    p{
+      color:white;
+    }
+}
+.coinDetails {
+    // grid-template-columns: repeat(auto-fill);
+    // grid-column-gap: 30px;
+    // grid-row-gap: 20px;
+  }
+  
+  .coins {
+    animation: moving 10s infinite linear;
+  }
+  
+  @keyframes moving {
+    0% {
+      transform: translate(900px, 0)
+    }
+    50% {
+      transform: translate(-500px, 0);
+    }
+    100% {
+      transform: translate(-1500px, 0)
+    }
+  }
+

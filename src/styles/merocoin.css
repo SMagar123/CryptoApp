@@ -1,0 +1,59 @@
+.trendingCoin {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vw;
+  margin: 1em;
+  border-radius: 25px;
+}
+
+.coinDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  padding: 1em;
+  background-color: black;
+}
+.coinDetails .coins {
+  text-align: center;
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 25px;
+  color: white;
+}
+.coinDetails .coins img {
+  height: 100px;
+}
+.coinDetails .coins p {
+  font-size: 1.7rem;
+}
+
+.trendingCoinHeader {
+  padding: 1em;
+}
+.trendingCoinHeader h2 {
+  text-align: center;
+  color: rgb(188, 13, 71);
+  color: white;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.trendingCoinHeader p {
+  color: white;
+}
+
+.coins {
+  animation: moving 10s infinite linear;
+}
+
+@keyframes moving {
+  0% {
+    transform: translate(900px, 0);
+  }
+  50% {
+    transform: translate(-500px, 0);
+  }
+  100% {
+    transform: translate(-1500px, 0);
+  }
+}/*# sourceMappingURL=merocoin.css.map */
