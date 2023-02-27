@@ -80,7 +80,7 @@ const GlobalCrypto = () => {
                     <td>{coinItem.total_volume.toLocaleString()}</td>
                     <td>Rs.{(coinItem.market_cap * 1.6).toLocaleString()}M</td>
                   </tr>
-                  <hr width="600%" />
+                  <hr width="500%" />
                 </>
               );
             })}
