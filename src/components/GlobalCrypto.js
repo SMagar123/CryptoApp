@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "../styles/globalcrypto.css";
 const GlobalCrypto = () => {
   const [crypto, setCrypto] = useState([]);
@@ -32,6 +33,7 @@ const GlobalCrypto = () => {
       );
     });
   };
+  const history = useHistory();
   return (
     <div className="globalCryptoDivWrapper">
       <div className="globalCryptoTitle">
@@ -41,7 +43,7 @@ const GlobalCrypto = () => {
         <input
           type="text"
           placeholder="Search Crypto by name..."
-          onChange={(e) => setCryptoFinding(e.target.value)}
+          onChange={(e) => setCryptoFinding(e.target.value.toLowerCase())}
         />
       </div>
       <div className="cryptoData">
@@ -57,7 +59,10 @@ const GlobalCrypto = () => {
             {searchCrypto().map((coinItem) => {
               return (
                 <>
-                  <tr>
+                  <tr
+                    onClick={() => history.push(`/charts/${coinItem.id}`)}
+                    key={coinItem.id}
+                  >
                     <td style={{ padding: "1em" }}>
                       <div
                         className="coinsFigure"
@@ -80,7 +85,7 @@ const GlobalCrypto = () => {
                     <td>{coinItem.total_volume.toLocaleString()}</td>
                     <td>Rs.{(coinItem.market_cap * 1.6).toLocaleString()}M</td>
                   </tr>
-                  <hr width="600%" />
+                  <hr width="590%" />
                 </>
               );
             })}

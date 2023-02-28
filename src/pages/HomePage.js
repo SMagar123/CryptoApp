@@ -1,7 +1,6 @@
-import React from "react";
+import React, { createContext } from "react";
 import GlobalCrypto from "../components/GlobalCrypto";
 import MeroCoins from "../components/MeroCoins";
-
 const HomePage = () => {
   return (
     <div>
