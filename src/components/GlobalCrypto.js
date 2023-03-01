@@ -55,10 +55,10 @@ const GlobalCrypto = () => {
               })}
             </tr>
           </thead>
-          <tbody>
-            {searchCrypto().map((coinItem) => {
-              return (
-                <>
+          {searchCrypto().map((coinItem) => {
+            return (
+              <>
+                <tbody>
                   <tr
                     onClick={() => history.push(`/charts/${coinItem.id}`)}
                     key={coinItem.id}
@@ -86,10 +86,10 @@ const GlobalCrypto = () => {
                     <td>Rs.{(coinItem.market_cap * 1.6).toLocaleString()}M</td>
                   </tr>
                   <hr width="590%" />
-                </>
-              );
-            })}
-          </tbody>
+                </tbody>
+              </>
+            );
+          })}
         </table>
       </div>
     </div>

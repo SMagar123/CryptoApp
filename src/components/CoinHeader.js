@@ -1,14 +1,13 @@
 import React from "react";
 // import { createContext } from "react";
 import "../styles/coinheader.css";
-import { Link, Route, Switch } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import ChartPage from "../pages/ChartPage";
-import AboutPage from "../pages/AboutPage";
+import { Link } from "react-router-dom";
+// import RoutingComponent from "./RoutingComponent";
+
 // const SingleCoinContext = createContext();
 const CoinHeader = () => {
   return (
-    <>
+    <div>
       {/* <SingleCoinContext.Provider value="bitcoin"> */}
       <div className="headerWrapper">
         <div className="logo">
@@ -19,25 +18,13 @@ const CoinHeader = () => {
         <div className="navbar">
           <Link to="/">HOME</Link>
           <Link to="/charts">CHARTS</Link>
+          {/* <Link to="/charts">CHARTS</Link> */}
           <Link to="/about">ABOUT</Link>
         </div>
       </div>
-      <Switch>
-        <Route exact path="/about">
-          <AboutPage />
-        </Route>
-        <Route exact path="/charts">
-          <ChartPage />
-        </Route>
-        <Route exact path="/charts/:id">
-          <ChartPage />
-        </Route>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-      </Switch>
+      {/* <RoutingComponent /> */}
       {/* </SingleCoinContext.Provider> */}
-    </>
+    </div>
   );
 };
 
