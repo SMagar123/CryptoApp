@@ -1,0 +1,30 @@
+.aboutWrapper{
+    margin-top: 4.2em;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    .aboutImage{
+        width: 40%;
+        padding: 1em;
+        img{
+            width: 100%;
+        }
+    }
+    .aboutDescription{
+        background-color: #f1f3f3;;
+        text-align: center;
+        padding: 1em;
+        margin-right: 1em;
+        width: 60%;
+        border-left: 3px solid rgb(188, 13, 71) ;
+        h1{
+            color: rgb(188, 13, 71);
+        }
+        p{
+            font-weight: bold;
+        }
+        // border: 1px solid black;
+    }
+}

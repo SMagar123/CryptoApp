@@ -1,0 +1,16 @@
+.daysButton{
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1em;
+    button{
+        color: white;
+        outline: none;
+        padding: 0.8em;
+        border: 2px solid white;
+        border-radius: 15px;
+        background-color: rgb(188, 13, 71);
+        margin: 1em;
+    }
+}

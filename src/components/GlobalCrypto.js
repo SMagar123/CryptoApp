@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { CurrencyContext } from "../App";
 import "../styles/globalcrypto.css";
 const GlobalCrypto = () => {
+  const currencyFormatting = useContext(CurrencyContext);
   const [crypto, setCrypto] = useState([]);
   const [cryptoFinding, setCryptoFinding] = useState("");
   useEffect(() => {
@@ -79,13 +81,17 @@ const GlobalCrypto = () => {
                       </div>
                     </td>
                     <td>
-                      Rs.{(coinItem.current_price * 1.6).toLocaleString()}
+                      {currencyFormatting}
+                      {(coinItem.current_price * 1.6).toLocaleString()}
                     </td>
                     <td>{coinItem.price_change_percentage_24h}%</td>
                     <td>{coinItem.total_volume.toLocaleString()}</td>
-                    <td>Rs.{(coinItem.market_cap * 1.6).toLocaleString()}M</td>
+                    <td>
+                      {currencyFormatting}
+                      {(coinItem.market_cap * 1.6).toLocaleString()}M
+                    </td>
                   </tr>
-                  <hr width="590%" />
+                  <hr width="575%" />
                 </tbody>
               </>
             );

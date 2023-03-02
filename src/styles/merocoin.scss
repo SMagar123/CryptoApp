@@ -6,6 +6,7 @@
     height: 30vw;
     margin: 1em;
     border-radius: 25px;
+    margin-top: 5em;
 
 }
 .coinDetails{
@@ -14,6 +15,7 @@
     align-items: center;
     overflow: hidden;
     padding: 1em;
+    z-index: 1;
      background-color: black;
     .coins{
         text-align: center;
@@ -23,6 +25,7 @@
         color:white;
         img{
           height: 100px;
+          z-index: -1;
         }
         p{
           font-size: 1.7rem;

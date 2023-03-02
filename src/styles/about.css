@@ -1,0 +1,29 @@
+.aboutWrapper {
+  margin-top: 4.2em;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+.aboutWrapper .aboutImage {
+  width: 40%;
+  padding: 1em;
+}
+.aboutWrapper .aboutImage img {
+  width: 100%;
+}
+.aboutWrapper .aboutDescription {
+  background-color: #f1f3f3;
+  text-align: center;
+  padding: 1em;
+  margin-right: 1em;
+  width: 60%;
+  border-left: 3px solid rgb(188, 13, 71);
+}
+.aboutWrapper .aboutDescription h1 {
+  color: rgb(188, 13, 71);
+}
+.aboutWrapper .aboutDescription p {
+  font-weight: bold;
+}/*# sourceMappingURL=about.css.map */

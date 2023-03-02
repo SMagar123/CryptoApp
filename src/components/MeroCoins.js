@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/merocoin.css";
+import { CurrencyContext } from "../App";
 const MeroCoins = () => {
+  const currencyFormat = useContext(CurrencyContext);
   const [meroCoin, setMeroCoin] = useState([]);
   useEffect(() => {
     async function getMeroCoins() {
       try {
         const coinResponse = await fetch(
-          //   "https://data.binance.com/api/v3/ticker/24hr"
           "https://api.coingecko.com/api/v3/search/trending"
         );
         const coinData = await coinResponse.json();
@@ -31,12 +32,12 @@ const MeroCoins = () => {
               <h4>{item.item.symbol}</h4>
               {item.item.price_btc * 3068065.33 > 0 ? (
                 <p style={{ color: "gold" }}>
-                  Rs.
+                  {currencyFormat}
                   {Math.ceil(item.item.price_btc * 3068065.33).toLocaleString()}
                 </p>
               ) : (
                 <p style={{ color: "red" }}>
-                  Rs.
+                  {currencyFormat}
                   {Math.ceil(item.item.price_btc * 3068065.33).toLocaleString()}
                 </p>
               )}

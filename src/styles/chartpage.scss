@@ -1,0 +1,16 @@
+.chartPageWrapper{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4em;
+    .coinDetails{
+        background-color: rgb(188, 13, 71);
+        width: 30%;
+        display: grid;
+    }
+    .coinCharts{
+        width: 70%;
+        padding: 1em;
+    }
+}

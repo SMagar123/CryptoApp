@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-import axios from "axios";
+import "../styles/historical.css";
+import { Loader } from "rsuite";
 const HistoricalData = (props) => {
   const chartDays = [
     {
@@ -41,10 +42,11 @@ const HistoricalData = (props) => {
   }, [props.coin.id, days]);
   return (
     <div>
-      <h3 style={{ color: "white" }}>HistoricalData Chart</h3>
+      <h2 style={{ color: "rgb(188, 13, 71)" }}>Historical Data Chart</h2>
       {!historicData | (flag === false) ? (
-        <h3 style={{ color: "white" }}>Loading Data....</h3>
+        <Loader size="lg" content="Loading..." />
       ) : (
+        // <Loader />
         <>
           <div className="Chart_Display">
             <Line

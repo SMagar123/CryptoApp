@@ -1,11 +1,15 @@
 .headerWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1em;
-  box-shadow: 0 0 3px gray;
+  box-shadow: 0 0 3px white;
   background-color: black;
+  z-index: 3;
 }
 .headerWrapper .logo a {
   text-decoration: none;
@@ -13,11 +17,12 @@
 .headerWrapper .logo h2 {
   color: rgb(188, 13, 71);
   font-size: 2rem;
+  text-shadow: 1px 1px 1px white;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 50%;
   color: white;
