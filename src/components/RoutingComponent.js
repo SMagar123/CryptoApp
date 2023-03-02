@@ -13,9 +13,10 @@ const RoutingComponent = () => {
         <Route exact path="/about">
           <AboutPage />
         </Route>
-        <Route exact path="/charts">
-          <ChartPage />
+        {/* <Route exact path="/charts">
+          <ChartPage /> 
         </Route>
+        */}
         <Route path="/charts/:id" exact>
           <ChartPage />
         </Route>

@@ -17,7 +17,7 @@ const CoinHeader = () => {
         </div>
         <div className="navbar">
           <Link to="/">HOME</Link>
-          <Link to="/charts">CHARTS</Link>
+          {/* <Link to="/charts">CHARTS</Link> */}
           {/* <Link to="/charts">CHARTS</Link> */}
           <Link to="/about">ABOUT</Link>
         </div>

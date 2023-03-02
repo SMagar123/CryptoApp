@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import "chart.js/auto";
 import axios from "axios";
-const HistoricalData = ({ coin }) => {
+const HistoricalData = (props) => {
   const chartDays = [
     {
       label: "24 Hours",
@@ -23,21 +24,26 @@ const HistoricalData = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
   const [flag, setflag] = useState(false);
-  const fetchHistoricData = async () => {
-    const { data } = await axios.get(
-      `https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=USD&days=${days}`
-    );
-    setflag(true);
-    setHistoricData(data.prices);
-  };
   useEffect(() => {
+    async function fetchHistoricData() {
+      try {
+        const response = await fetch(
+          `https://api.coingecko.com/api/v3/coins/${props.coin.id}/market_chart?vs_currency=USD&days=${days}`
+        );
+        const data = await response.json();
+        setflag(true);
+        setHistoricData(data.prices);
+      } catch (e) {
+        console.error(e);
+      }
+    }
     fetchHistoricData();
-  }, [days]);
+  }, [props.coin.id, days]);
   return (
     <div>
       <h3 style={{ color: "white" }}>HistoricalData Chart</h3>
       {!historicData | (flag === false) ? (
-        <h3>Loading Data....</h3>
+        <h3 style={{ color: "white" }}>Loading Data....</h3>
       ) : (
         <>
           <div className="Chart_Display">
@@ -54,9 +60,7 @@ const HistoricalData = ({ coin }) => {
 
                 datasets: [
                   {
-                    data: historicData.map(
-                      (coin) => coin[1]
-                    ),
+                    data: historicData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in USD`,
                     borderColor: "#8a0707",
                   },
