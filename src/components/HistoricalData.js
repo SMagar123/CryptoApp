@@ -46,7 +46,6 @@ const HistoricalData = (props) => {
       {!historicData | (flag === false) ? (
         <Loader size="lg" content="Loading..." />
       ) : (
-        // <Loader />
         <>
           <div className="Chart_Display">
             <Line
