@@ -24,7 +24,7 @@
   color: white;
 }
 .coinDetails .coins img {
-  height: 100px;
+  height: 15vh;
   z-index: -1;
 }
 .coinDetails .coins p {
